@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:overScrollMode="ifContentScrolls" >
+
+<ScrollView 
+    android:id="@+id/shouldiscrollyou" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" >
+
+<RelativeLayout
+    android:id="@+id/yespleasescrollme"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/synth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:maxHeight="140dp"
+        android:maxWidth="140dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/synth0001" />
+
+    <TextView
+        android:id="@+id/label_maker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/synth"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/maker"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/maker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/label_maker"
+        android:layout_alignBottom="@+id/label_maker"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/label_maker"
+        android:ems="10"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:nextFocusDown="@+id/model" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/label_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/label_maker"
+        android:layout_below="@+id/maker"
+        android:layout_marginTop="28dp"
+        android:text="@string/model"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/model"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/maker"
+        android:layout_below="@+id/maker"
+        android:layout_marginBottom="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:nextFocusUp="@+id/maker" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/label_model"
+        android:layout_below="@+id/model"
+        android:nextFocusUp="@+id/model"
+        android:text="@string/check" />
+
+    <ImageView
+        android:id="@+id/guessed_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/check"
+        android:layout_alignTop="@id/check"
+        android:layout_margin="8dp"
+        android:layout_toRightOf="@+id/check"
+        android:src="@drawable/perfect" />
+
+    <TextView
+        android:id="@+id/guessed"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/check"
+        android:layout_alignTop="@id/check"
+        android:layout_toRightOf="@+id/check"
+        android:gravity="center"
+        android:text="PERFECT (4/4)"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:id="@+id/links"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/check"
+        android:layout_below="@+id/check"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/readmore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="@string/readmore"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/link_vse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/vse" />
+
+        <ImageView
+            android:id="@+id/link_wikipedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:src="@drawable/wikipedia" />
+
+        <ImageView
+            android:id="@+id/link_internet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:adjustViewBounds="false"
+            android:src="@drawable/internet" />
+
+    </LinearLayout>
+</RelativeLayout>
+
+</ScrollView>
+</RelativeLayout>

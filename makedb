@@ -1,0 +1,41 @@
+#!/usr/bin/env perl
+
+use 5.010;
+
+use strict;
+use warnings;
+
+my $db_file = 'assets/synths.sqlite';
+
+my $schema_file = 'content/db_schema.sql';
+my $data_file = 'content/db_data.sql';
+
+my $update_schema = 0;
+my $update_content = 0;
+
+if(not -e $db_file) {
+	$update_schema = 1;
+	$update_content = 1;
+}
+if(-M $schema_file < -M $db_file) {
+	$update_schema = 1;
+	$update_content = 1;
+}
+if(-M $data_file < -M $db_file) {
+	$update_content = 1;
+}
+if($update_schema) {
+	say "initializing db...";
+	unlink($db_file);
+	`sqlite3 $db_file < $schema_file`;
+	say "done";
+}
+if($update_content) {
+	say "updating db...";
+	`sqlite3 $db_file < $data_file`;
+	say "done";
+}
+
+say "testing database...";
+say `prove t/database.t`;
+say "done";

@@ -1,0 +1,76 @@
+#!/bin/bash
+
+cd support
+
+convert -crop 96x96 LittlePhatty.png knob%03d.png
+cnt=0
+for KNOB in knob*.png
+do
+	if [ $cnt -eq 0 ]; then
+		echo $KNOB
+		cp $KNOB ../res/drawable-xhdpi/$KNOB
+		convert -resize 72 -unsharp 0x1 $KNOB ../res/drawable-hdpi/$KNOB
+		convert -resize 48 -unsharp 0x1 $KNOB ../res/drawable-mdpi/$KNOB
+		convert -resize 36 -unsharp 0x1 $KNOB ../res/drawable-ldpi/$KNOB
+	fi
+	let cnt=cnt+1
+	if [ $cnt -eq 5 ]; then
+		cnt=0
+	fi
+done
+echo knob100.png
+cp knob099.png ../res/drawable-xhdpi/knob100.png
+convert -resize 72 -unsharp 0x1 knob099.png ../res/drawable-hdpi/knob100.png
+convert -resize 48 -unsharp 0x1 knob099.png ../res/drawable-mdpi/knob100.png
+convert -resize 36 -unsharp 0x1 knob099.png ../res/drawable-ldpi/knob100.png
+
+for IMAGE in difficulty*.png
+do
+	echo $IMAGE
+    convert -resize 96 -unsharp 0x1 $IMAGE ../res/drawable-xhdpi/$IMAGE
+    convert -resize 72 -unsharp 0x1 $IMAGE ../res/drawable-hdpi/$IMAGE
+    convert -resize 48 -unsharp 0x1 $IMAGE ../res/drawable-mdpi/$IMAGE
+    convert -resize 36 -unsharp 0x1 $IMAGE ../res/drawable-ldpi/$IMAGE
+done
+
+cd ..
+
+cd content
+
+for JPG in synth*.jpg
+do
+	echo $JPG
+    # convert -resize '1280>' $JPG assets/$JPG
+    PNG=${JPG%.jpg}.png
+    # convert -resize 480 -unsharp 0x1 $JPG ../res/drawable-xhdpi/$PNG
+	# xhdpi full
+    convert -resize 480 -unsharp 0x1 $JPG /tmp/$PNG
+    pngnq -f -d ../res/raw/ -e .png /tmp/$PNG
+    # xhdpi thump
+    convert -resize 150 -unsharp 0x1 $JPG /tmp/thumb_$PNG
+    pngnq -f -d ../res/drawable-xhdpi -e .png /tmp/thumb_$PNG
+    convert -size 150x150 xc:white ../res/drawable-xhdpi/thumb_$PNG -gravity center -composite ../res/drawable-xhdpi/thumb_$PNG
+    # hdpi full
+    convert -resize 360 -unsharp 0x1 $JPG /tmp/$PNG
+    pngnq -f -d ../res/drawable-hdpi -e .png /tmp/$PNG
+    # hdpi thumb
+    convert -resize 120  -unsharp 0x1 $JPG /tmp/thumb_$PNG
+    pngnq -f -d ../res/drawable-hdpi -e .png /tmp/thumb_$PNG
+    convert -size 120x120 xc:white ../res/drawable-hdpi/thumb_$PNG -gravity center -composite ../res/drawable-hdpi/thumb_$PNG
+    # mdpi full
+    convert -resize 240 -unsharp 0x1 $JPG /tmp/$PNG
+    pngnq -f -d ../res/drawable-mdpi -e .png /tmp/$PNG
+    # mdpi thumb
+    convert -resize 90 -unsharp 0x1 $JPG /tmp/thumb_$PNG
+    pngnq -f -d ../res/drawable-mdpi -e .png /tmp/thumb_$PNG
+    convert -size 90x90 xc:white ../res/drawable-mdpi/thumb_$PNG -gravity center -composite ../res/drawable-mdpi/thumb_$PNG
+    # ldpi full
+    convert -resize 180 -unsharp 0x1 $JPG /tmp/$PNG
+    pngnq -f -d ../res/drawable-ldpi -e .png /tmp/$PNG
+    # ldpi thumb
+    convert -resize 60 -unsharp 0x1 $JPG /tmp/thumb_$PNG
+    pngnq -f -d ../res/drawable-ldpi -e .png /tmp/thumb_$PNG
+    convert -size 60x60 xc:white ../res/drawable-ldpi/thumb_$PNG -gravity center -composite ../res/drawable-ldpi/thumb_$PNG
+done
+
+cd ..

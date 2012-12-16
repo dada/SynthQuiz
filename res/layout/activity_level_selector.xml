@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".LevelSelector" >
+
+    <TextView
+        android:id="@+id/level_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/level_select" />
+
+    <GridView
+        android:id="@+id/levels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/level_select"
+        android:layout_centerHorizontal="true"
+        android:numColumns="2"
+        android:verticalSpacing="16dp" >
+
+    </GridView>
+
+</RelativeLayout>

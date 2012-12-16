@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MinigameProductionDate" >
+
+<ScrollView 
+    android:id="@+id/shouldiscrollyou" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" >
+
+<RelativeLayout
+    android:id="@+id/yespleasescrollme"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >   
+    
+    <TextView
+        android:id="@+id/quiz_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/hello_world" />
+
+    <LinearLayout
+        android:id="@+id/first_row"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/quiz_text"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp" >
+
+        <ImageView
+            android:id="@+id/answer_a"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/synth0001" />
+
+        <ImageView
+            android:id="@+id/answer_b"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/synth0002" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/first_row"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp" >
+
+        <ImageView
+            android:id="@+id/answer_c"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/synth0003" />
+
+        <ImageView
+            android:id="@+id/answer_d"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="0dp"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/synth0004" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</ScrollView>
+        
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="it.perl.dada.SynthQuiz"
+    android:versionCode="1"
+    android:versionName="1" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="16" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="it.perl.dada.SynthQuiz.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.LevelSelectorActivity"
+            android:label="@string/title_activity_level_selector" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.LevelActivity"
+            android:label="@string/title_activity_level" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.GuessActivity"
+            android:label="@string/title_activity_guess" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.ZoomActivity"
+            android:label="@string/title_activity_zoom" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.MinigameSelectorActivity"
+            android:label="@string/title_activity_minigame_selector" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.MinigameActivity"
+            android:label="@string/title_activity_minigame" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.MinigameResultActivity"
+            android:label="@string/title_activity_minigame_result" >
+        </activity>
+        <activity
+            android:name="it.perl.dada.SynthQuiz.AboutActivity"
+            android:label="@string/title_activity_about" >
+        </activity>
+    </application>
+
+</manifest>

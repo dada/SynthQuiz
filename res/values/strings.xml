@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Synth Quiz</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_level_selector">Select a level</string>
+    <string name="title">Synth Quiz</string>
+    <string name="title_activity_level">Level</string>
+    <string name="level_select">Select a level to play</string>
+    <string name="level1">LEVEL 1</string>
+    <string name="maker">Maker:</string>
+    <string name="model">Model:</string>
+    <string name="title_activity_guess">Guess the synth</string>
+    <string name="check">Check</string>
+    <string name="title_activity_zoom">Zoom</string>
+    <string name="readmore">Read more:</string>
+    <string name="play">PLAY</string>
+    <string name="stats">Statistics</string>
+    <string name="minigames">Play trivia minigame</string>
+    <string name="about">About</string>
+    <string name="title_activity_minigame">Minigame</string>
+    <string name="title_activity_minigame_selector">Select a game</string>
+    <string name="title_activity_minigame_result">Your results</string>
+    <string name="minigame_select">Select a trivia category:</string>
+    <string name="production_dates">Production dates</string>
+    <string name="polyphony">Polyphony</string>
+    <string name="analog_vs_digital">Analog vs. Digital</string>
+    <string name="mixed">Mixed (all of the above)</string>
+    <string name="your_results">Your results:</string>
+    <string name="title_activity_about">AboutActivity</string>
+</resources>

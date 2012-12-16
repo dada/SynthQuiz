@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/level_bg" />
+
+    <ImageView
+        android:id="@+id/knob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/knob000" />
+    
+    <TextView
+        android:id="@+id/level_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/background"
+        android:layout_centerHorizontal="true"
+        android:text="0% done"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/lightgray"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/level_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/level_score"
+        android:layout_centerHorizontal="true"
+        android:text="Level 1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/ivory" />
+    
+    <TextView
+        android:id="@+id/percent_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/level_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp"
+        android:layout_marginTop="20dp"
+        android:text="LOCKED"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/ivory"
+        android:textSize="10sp" />
+
+</RelativeLayout>
